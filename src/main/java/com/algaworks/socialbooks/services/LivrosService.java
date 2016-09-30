@@ -10,7 +10,7 @@ import com.algaworks.socialbooks.domain.Comentario;
 import com.algaworks.socialbooks.domain.Livro;
 import com.algaworks.socialbooks.repository.ComentariosRepository;
 import com.algaworks.socialbooks.repository.LivrosRepository;
-import com.algaworks.socialbooks.services.exceptions.LivroNaoEncontradoException;
+import com.algaworks.socialbooks.services.exceptions.EntidadeNaoEncontradaException;
 
 @Service
 public class LivrosService {
@@ -29,7 +29,7 @@ public class LivrosService {
 		Livro livro = livrosRepository.findOne(id);
 		
 		if(livro == null){
-			throw new LivroNaoEncontradoException("O livro não pôde ser encontrado");
+			throw new EntidadeNaoEncontradaException("O livro não pôde ser encontrado");
 		}
 		
 		return livro;
@@ -44,7 +44,7 @@ public class LivrosService {
 		try{
 			livrosRepository.delete(id);
 		}catch(EmptyResultDataAccessException ed){
-			throw new LivroNaoEncontradoException("O livro não pôde ser encontrado");
+			throw new EntidadeNaoEncontradaException("O livro não pôde ser encontrado.");
 		}
 	}
 	
