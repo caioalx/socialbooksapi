@@ -53,4 +53,14 @@ public class AutoresResource {
 		return ResponseEntity.status(HttpStatus.OK).body(livros);
 	}
 	
+	@RequestMapping(value = "/{id}/livros", method = RequestMethod.POST)
+	public ResponseEntity<Void> salvarLivro(@PathVariable("id") Long autorId, @RequestBody Livro livro){
+		autoresService.salvarLivros(autorId, livro);
+		
+		URI uri = ServletUriComponentsBuilder.
+				fromCurrentRequest().build().toUri();
+		
+		return ResponseEntity.created(uri).build();
+	}
+	
 }
