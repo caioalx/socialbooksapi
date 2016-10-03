@@ -30,7 +30,7 @@ public class Autor {
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	@JsonInclude(Include.NON_NULL)
 	@NotNull(message = "O campo data de nascimento é de preenchimento obrigatório.")
-	private Date dataNacimento;
+	private Date dataNascimento;
 	
 	@JsonInclude(Include.NON_NULL)
 	@NotNull(message = "O campo nacionalidade é de preenchimento obrigatório.")
@@ -56,12 +56,12 @@ public class Autor {
 		this.nome = nome;
 	}
 
-	public Date getDataNacimento() {
-		return dataNacimento;
+	public Date getDataNascimento() {
+		return dataNascimento;
 	}
 
-	public void setDataNacimento(Date dataNacimento) {
-		this.dataNacimento = dataNacimento;
+	public void setDataNascimento(Date dataNacimento) {
+		this.dataNascimento = dataNacimento;
 	}
 
 	public String getNacionalidade() {
