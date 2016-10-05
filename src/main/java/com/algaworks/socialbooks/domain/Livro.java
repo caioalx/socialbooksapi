@@ -1,6 +1,5 @@
 package com.algaworks.socialbooks.domain;
 
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -102,7 +101,7 @@ public class Livro {
 	}
 
 	public List<Comentario> getComentarios() {
-		return Collections.unmodifiableList(comentarios);
+		return comentarios;
 	}
 
 	public void setComentarios(List<Comentario> comentarios) {
